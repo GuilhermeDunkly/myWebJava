@@ -8,24 +8,9 @@
 name: Gradle Package
 
 on:
-workflow_dispatch:
-    inputs:
-      reason:
-        description: 'Reason for running'
-        required: false
-        default: 'Manual trigger'
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-        release:
-    types: [created]
-
+    release:
+        types: [created]
+    workflow_dispatch:
 jobs:
   build:
 

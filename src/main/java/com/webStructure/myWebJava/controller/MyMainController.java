@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-
 public class MyMainController {
   @GetMapping("/")
   public String DefaultHome() {
@@ -17,8 +16,4 @@ public class MyMainController {
     return "redirect:register";
   }
 
-  @GetMapping
-  public String ShowRegister() {
-    return "register";
-  }
 }

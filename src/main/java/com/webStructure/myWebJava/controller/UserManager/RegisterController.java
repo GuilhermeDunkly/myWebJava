@@ -13,14 +13,15 @@ public class RegisterController {
   private userRepository userRepository;
 
   @PostMapping("/signup")
-  public String SaveUser(@RequestParam String username, @RequestParam String email) {
+  public String SaveUser(@RequestParam String username, @RequestParam String email, @RequestParam String password) {
     try {
       User newUser = new User();
       newUser.setEmail(email);
       newUser.setUsername(username);
       newUser.setName(username);
+      newUser.setPassword(password);
       userRepository.save(newUser);
-      return "redirect:/";
+      return "redirect:/Auth/login";
     } catch (Exception e) {
       System.err.println("ERRO AO SALVAR O USUARIO");
       return "redirect:/register";
